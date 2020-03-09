@@ -27,3 +27,19 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+- stage: Test
+  displayName: Test
+  jobs:
+  - job: Test
+    displayName: Test
+    pool: 
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Bash@3
+      displayName: test running bash
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your commands here
+          
+          echo 'Testing running commands'
